@@ -45,7 +45,7 @@ jobs:
 
   issue_opened:
     name: Issue Opened
-    if: ${{ github.event_name == 'issues'}}
+    if: ${{ github.event_name == 'issues' }}
     runs-on: ubuntu-latest
     steps:
       - uses: wzshiming/gh-ci-bot@master
@@ -62,7 +62,7 @@ jobs:
 
   pr_opened:
     name: PR Opened
-    if: ${{ github.event_name == 'pull_request'}}
+    if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - uses: wzshiming/gh-ci-bot@master
