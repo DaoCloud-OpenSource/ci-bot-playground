@@ -17,6 +17,17 @@ env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
   GH_REPOSITORY: ${{ github.repository }}
   REVIEWERS: |-
+    calvin0327
+    cyclinder
+    e-tuch
+    EricWvi
+    jonyhy96
+    kebe7jun
+    kerthcet
+    mengjiao-liu
+    MorningSunKing
+    muma378
+    pacoxu
     wzshiming
   APPROVERS: |-
     wzshiming
