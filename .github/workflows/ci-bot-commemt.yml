@@ -19,6 +19,17 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_KIND: pr
           REVIEWERS: |-
+            calvin0327
+            cyclinder
+            e-tuch
+            EricWvi
+            jonyhy96
+            kebe7jun
+            kerthcet
+            mengjiao-liu
+            MorningSunKing
+            muma378
+            pacoxu
             wzshiming
           APPROVERS: |-
             wzshiming
