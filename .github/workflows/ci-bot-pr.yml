@@ -1,0 +1,37 @@
+name: CI Bot PR
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  pr_opened:
+    name: PR Opened
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wzshiming/gh-ci-bot@master
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPOSITORY: ${{ github.repository }}
+          LOGIN: ${{ github.event.pull_request.user.login }}
+          MESSAGE: ${{ github.event.pull_request.body }}
+          ISSUE_NUMBER: ${{ github.event.pull_request.number }}
+          ISSUE_KIND: pr
+          TYPE: created
+          GREETING: |-
+            Hi @${{ github.event.pull_request.user.login }},
+            Thanks for your pull request!
+            
+            If the PR is ready, use the `/auto-cc` command to assign Reviewer to Review. 
+            We will review it shortly.
+
+          DETAILS: |-
+
+            <details>
+            <summary>Details</summary>
+
+            Instructions for interacting with me using comments are available [here](https://github.com/wzshiming/gh-ci-bot). you can see the result in [Workflow](https://github.com/${{ github.repository }}/actions?query=actor%3A${{ github.event.pull_request.user.login }}+workflow%3A\"CI+Bot+Comment\").
+            If you have questions or suggestions related to my behavior, please file an issue against the [gh-ci-bot](https://github.com/wzshiming/gh-ci-bot) repository.
+
+            </details>
+

@@ -1,0 +1,58 @@
+name: CI Bot Comment
+on:
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  pr_commented:
+    name: PR Commented
+    if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wzshiming/gh-ci-bot@master
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPOSITORY: ${{ github.repository }}
+          LOGIN: ${{ github.event.comment.user.login }}
+          MESSAGE: ${{ github.event.comment.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_KIND: pr
+          REVIEWERS: |-
+            wzshiming
+          APPROVERS: |-
+            wzshiming
+          TYPE: comment
+          DETAILS: |-
+
+            <details>
+            <summary>Details</summary>
+
+            Instructions for interacting with me using comments are available [here](https://github.com/wzshiming/gh-ci-bot). you can see the result in [Workflow](https://github.com/${{ github.repository }}/actions?query=actor%3A${LOGIN}+workflow%3A\"CI+Bot+Comment\").
+            If you have questions or suggestions related to my behavior, please file an issue against the [gh-ci-bot](https://github.com/wzshiming/gh-ci-bot) repository.
+
+            </details>
+
+  issue_commented:
+    name: Issue Commented
+    if: ${{ !github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wzshiming/gh-ci-bot@master
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPOSITORY: ${{ github.repository }}
+          LOGIN: ${{ github.event.comment.user.login }}
+          MESSAGE: ${{ github.event.comment.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_KIND: issue
+          TYPE: comment
+          DETAILS: |-
+
+            <details>
+            <summary>Details</summary>
+
+            Instructions for interacting with me using comments are available [here](https://github.com/wzshiming/gh-ci-bot). you can see the result in [Workflow](https://github.com/${{ github.repository }}/actions?query=actor%3A${LOGIN}+workflow%3A\"CI+Bot+Comment\").
+            If you have questions or suggestions related to my behavior, please file an issue against the [gh-ci-bot](https://github.com/wzshiming/gh-ci-bot) repository.
+
+            </details>
