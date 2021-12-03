@@ -14,8 +14,42 @@ on:
       - opened
 
 env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
-  GH_REPOSITORY: ${{ github.repository }}
+  # This plugins is for anyone who can use it
+  PLUGINS: |-
+    assign
+    auto-cc
+    cc
+    label-bug
+    label-documentation
+    label-enhancement
+    label-question
+  
+  # This plugins is for organization member or repository member
+  MEMBERS_PLUGINS: |-
+    label-duplicate
+    label-good-first-issue
+    label-help-wanted
+    label-invalid
+    label-kind
+    label-wontfix
+    lifecycle
+  
+  # This plugins is for in the REVIEWERS environment variable
+  REVIEWERS_PLUGINS: |-
+    label-lgtm
+    retitle
+
+  # This plugins is for in the APPROVERS environment variable
+  APPROVERS_PLUGINS: |-
+    merge
+
+  # This plugins is for in the MAINTAINERS environment variable
+  MAINTAINERS_PLUGINS: |-
+    milestone
+
+  # This plugins is for organization owner or repository owner
+  OWNERS_PLUGINS: ""
+
   REVIEWERS: |-
     calvin0327
     cyclinder
@@ -31,6 +65,11 @@ env:
     wzshiming
   APPROVERS: |-
     wzshiming
+  MAINTAINERS: |-
+    wzshiming
+
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  GH_REPOSITORY: ${{ github.repository }}
   DETAILS: |-
 
     <details>
@@ -53,6 +92,7 @@ jobs:
           LOGIN: ${{ github.event.issue.user.login }}
           MESSAGE: ${{ github.event.issue.body }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          AUTHOR_ASSOCIATION: ${{ github.event.issue.author_association }}
           ISSUE_KIND: issue
           TYPE: created
           GREETING: |-
@@ -70,6 +110,7 @@ jobs:
           LOGIN: ${{ github.event.pull_request.user.login }}
           MESSAGE: ${{ github.event.pull_request.body }}
           ISSUE_NUMBER: ${{ github.event.pull_request.number }}
+          AUTHOR_ASSOCIATION: ${{ github.event.pull_request.author_association }}
           ISSUE_KIND: pr
           TYPE: created
           GREETING: |-
@@ -88,6 +129,7 @@ jobs:
           LOGIN: ${{ github.event.comment.user.login }}
           MESSAGE: ${{ github.event.comment.body }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          AUTHOR_ASSOCIATION: ${{ github.event.comment.author_association }}
           ISSUE_KIND: issue
           TYPE: comment
 
@@ -101,6 +143,7 @@ jobs:
           LOGIN: ${{ github.event.comment.user.login }}
           MESSAGE: ${{ github.event.comment.body }}
           ISSUE_NUMBER: ${{ github.event.pull_request.number }}
+          AUTHOR_ASSOCIATION: ${{ github.event.comment.author_association }}
           ISSUE_KIND: pr
           TYPE: comment
 
@@ -114,5 +157,6 @@ jobs:
           LOGIN: ${{ github.event.comment.user.login }}
           MESSAGE: ${{ github.event.comment.body }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          AUTHOR_ASSOCIATION: ${{ github.event.comment.author_association }}
           ISSUE_KIND: pr
           TYPE: comment
