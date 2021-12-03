@@ -64,6 +64,7 @@ env:
     pacoxu
     wzshiming
   APPROVERS: |-
+    pacoxu
     wzshiming
   MAINTAINERS: |-
     wzshiming
