@@ -69,7 +69,7 @@ env:
   MAINTAINERS: |-
     wzshiming
 
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GH_REPOSITORY: ${{ github.repository }}
   DETAILS: |-
 
