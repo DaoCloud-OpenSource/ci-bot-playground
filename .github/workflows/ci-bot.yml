@@ -23,9 +23,6 @@ env:
     label-documentation
     label-enhancement
     label-question
-  
-  # This plugins is for organization member or repository member
-  MEMBERS_PLUGINS: |-
     label-duplicate
     label-good-first-issue
     label-help-wanted
@@ -33,19 +30,22 @@ env:
     label-kind
     label-wontfix
     lifecycle
-  
-  # This plugins is for in the REVIEWERS environment variable
-  REVIEWERS_PLUGINS: |-
     label-lgtm
     retitle
+    merge
+    milestone
+
+  # This plugins is for organization member or repository member
+  MEMBERS_PLUGINS: ""
+  
+  # This plugins is for in the REVIEWERS environment variable
+  REVIEWERS_PLUGINS: ""
 
   # This plugins is for in the APPROVERS environment variable
-  APPROVERS_PLUGINS: |-
-    merge
+  APPROVERS_PLUGINS: ""
 
   # This plugins is for in the MAINTAINERS environment variable
-  MAINTAINERS_PLUGINS: |-
-    milestone
+  MAINTAINERS_PLUGINS: ""
 
   # This plugins is for organization owner or repository owner
   OWNERS_PLUGINS: ""
