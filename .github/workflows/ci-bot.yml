@@ -108,7 +108,7 @@ jobs:
 
   pr_opened:
     name: PR Opened
-    if: ${{ github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'pull_request_target' }}
     runs-on: ubuntu-latest
     steps:
       - uses: wzshiming/gh-ci-bot@master
