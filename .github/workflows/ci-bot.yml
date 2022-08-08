@@ -75,15 +75,15 @@ permissions:
   actions: read
   checks: read
   contents: read
-  deployments: read
-  id-token: read
+  deployments: none
+  id-token: node
   issues: write
   discussions: read
-  packages: read
-  pages: read
+  packages: none
+  pages: none
   pull-requests: write
   repository-projects: read
-  security-events: read
+  security-events: none
   statuses: read
 
 jobs:
