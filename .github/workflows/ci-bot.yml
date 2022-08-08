@@ -19,11 +19,13 @@ env:
     assign
     auto-cc
     cc
-    label
     label-bug
     label-documentation
     label-enhancement
     label-question
+  
+  # This plugins is for organization member or repository member
+  MEMBERS_PLUGINS: |-
     label-duplicate
     label-good-first-issue
     label-help-wanted
@@ -31,41 +33,27 @@ env:
     label-kind
     label-wontfix
     lifecycle
-    label-lgtm
-    retitle
-    merge
-    milestone
-
-  # This plugins is for organization member or repository member
-  MEMBERS_PLUGINS: ""
   
   # This plugins is for in the REVIEWERS environment variable
-  REVIEWERS_PLUGINS: ""
+  REVIEWERS_PLUGINS: |-
+    label-lgtm
+    retitle
 
   # This plugins is for in the APPROVERS environment variable
-  APPROVERS_PLUGINS: ""
+  APPROVERS_PLUGINS: |-
+    label
+    merge
 
   # This plugins is for in the MAINTAINERS environment variable
-  MAINTAINERS_PLUGINS: ""
+  MAINTAINERS_PLUGINS: |-
+    milestone
 
   # This plugins is for organization owner or repository owner
   OWNERS_PLUGINS: ""
 
   REVIEWERS: |-
-    calvin0327
-    cyclinder
-    e-tuch
-    EricWvi
-    jonyhy96
-    kebe7jun
-    kerthcet
-    mengjiao-liu
-    MorningSunKing
-    muma378
-    pacoxu
     wzshiming
   APPROVERS: |-
-    pacoxu
     wzshiming
   MAINTAINERS: |-
     wzshiming
@@ -81,6 +69,22 @@ env:
     If you have questions or suggestions related to my behavior, please file an issue against the [gh-ci-bot](https://github.com/wzshiming/gh-ci-bot) repository.
 
     </details>
+
+# https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
+permissions:
+  actions: read
+  checks: read
+  contents: read
+  deployments: read
+  id-token: read
+  issues: write
+  discussions: read
+  packages: read
+  pages: read
+  pull-requests: write
+  repository-projects: read
+  security-events: read
+  statuses: read
 
 jobs:
 
