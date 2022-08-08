@@ -66,7 +66,7 @@ env:
     <summary>Details</summary>
 
     Instructions for interacting with me using comments are available here.
-    If you have questions or suggestions related to my behavior, please file an issue against the [gh-ci-bot](https://github.com/daocloud-opensource/gh-ci-bot) repository.
+    If you have questions or suggestions related to my behavior, please file an issue against the [gh-ci-bot](https://github.com/wzshiminggh-ci-bot) repository.
 
     </details>
 
@@ -93,7 +93,7 @@ jobs:
     if: ${{ github.event_name == 'issues' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: daocloud-opensource/gh-ci-bot@master
+      - uses: wzshiminggh-ci-bot@master
         env:
           LOGIN: ${{ github.event.issue.user.login }}
           MESSAGE: ${{ github.event.issue.body }}
@@ -111,7 +111,7 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: daocloud-opensource/gh-ci-bot@master
+      - uses: wzshiminggh-ci-bot@master
         env:
           LOGIN: ${{ github.event.pull_request.user.login }}
           MESSAGE: ${{ github.event.pull_request.body }}
@@ -130,7 +130,7 @@ jobs:
     if: ${{ github.event_name == 'issue_comment' && !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - uses: daocloud-opensource/gh-ci-bot@master
+      - uses: wzshiminggh-ci-bot@master
         env:
           LOGIN: ${{ github.event.comment.user.login }}
           MESSAGE: ${{ github.event.comment.body }}
@@ -144,7 +144,7 @@ jobs:
     if: ${{ github.event_name == 'pull_request_review_comment' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: daocloud-opensource/gh-ci-bot@master
+      - uses: wzshiminggh-ci-bot@master
         env:
           LOGIN: ${{ github.event.comment.user.login }}
           MESSAGE: ${{ github.event.comment.body }}
@@ -158,7 +158,7 @@ jobs:
     if: ${{ github.event_name == 'issue_comment' && github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - uses: daocloud-opensource/gh-ci-bot@master
+      - uses: wzshiminggh-ci-bot@master
         env:
           LOGIN: ${{ github.event.comment.user.login }}
           MESSAGE: ${{ github.event.comment.body }}
