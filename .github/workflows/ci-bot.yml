@@ -76,7 +76,7 @@ permissions:
   checks: read
   contents: read
   deployments: none
-  id-token: node
+  id-token: none
   issues: write
   discussions: read
   packages: none
