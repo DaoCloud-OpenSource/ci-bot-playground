@@ -2,3 +2,4 @@
 
 CI Bot 测试
 Test
+go
