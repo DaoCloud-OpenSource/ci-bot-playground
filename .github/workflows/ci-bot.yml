@@ -63,7 +63,6 @@ env:
   MAINTAINERS: |-
     wzshiming
 
-  GH_SHA: ${{ github.sha }}
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GH_REPOSITORY: ${{ github.repository }}
   DETAILS: |-
@@ -78,7 +77,7 @@ env:
 
 # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
 permissions:
-  actions: read
+  actions: write
   checks: read
   contents: read
   deployments: none
