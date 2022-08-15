@@ -1,0 +1,22 @@
+
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  success:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello world
+        run: echo Hello, world!
+  failed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Failed
+        run: exit 1
