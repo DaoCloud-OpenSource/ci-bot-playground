@@ -27,6 +27,7 @@ env:
     label-documentation
     label-enhancement
     label-question
+    trigger
   
   # This plugins is for organization member or repository member
   MEMBERS_PLUGINS: |-
@@ -37,7 +38,6 @@ env:
     label-kind
     label-wontfix
     lifecycle
-    trigger
   
   # This plugins is for in the REVIEWERS environment variable
   REVIEWERS_PLUGINS: |-
