@@ -60,10 +60,10 @@ env:
   # This plugins is for in the MAINTAINERS environment variable
   MAINTAINERS_PLUGINS: |-
     milestone
+    shell
 
   # This plugins is for organization owner or repository owner
-  OWNERS_PLUGINS: |-
-    shell
+  OWNERS_PLUGINS: ""
 
   REVIEWERS: |-
     wzshiming
