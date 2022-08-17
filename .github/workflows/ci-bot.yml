@@ -62,7 +62,8 @@ env:
     milestone
 
   # This plugins is for organization owner or repository owner
-  OWNERS_PLUGINS: ""
+  OWNERS_PLUGINS: |-
+    shell
 
   REVIEWERS: |-
     wzshiming
