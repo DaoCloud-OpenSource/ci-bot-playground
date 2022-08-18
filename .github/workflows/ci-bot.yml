@@ -91,7 +91,7 @@ env:
 permissions:
   actions: write
   checks: read
-  contents: read
+  contents: write
   deployments: none
   id-token: none
   issues: write
