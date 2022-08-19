@@ -1,0 +1,9 @@
+name: status
+on:
+  status
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo 'The status is ${{ github.event.state }}, description${{ github.event.description }}'
