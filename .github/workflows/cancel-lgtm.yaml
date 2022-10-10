@@ -1,0 +1,19 @@
+name: Remove lgtm
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  pull-requests: write
+
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  remove-lgtm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove lgtm
+        run: |
+          gh pr -R ${{ github.repository }} edit ${{ github.event.pull_request.number }} --remove-label "lgtm"
