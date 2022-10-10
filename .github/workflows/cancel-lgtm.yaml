@@ -1,4 +1,4 @@
-name: Remove lgtm
+name: Cancel lgtm
 
 on:
   pull_request:
@@ -11,9 +11,9 @@ env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  remove-lgtm:
+  cancel-lgtm:
     runs-on: ubuntu-latest
     steps:
-      - name: Remove lgtm
+      - name: Cancel lgtm
         run: |
           gh pr -R ${{ github.repository }} edit ${{ github.event.pull_request.number }} --remove-label "lgtm"
