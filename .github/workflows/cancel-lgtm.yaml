@@ -2,7 +2,7 @@ name: Cancel lgtm
 
 on:
   pull_request:
-    branches: [main]
+    types: [synchronize]
 
 permissions:
   pull-requests: write
@@ -16,5 +16,4 @@ jobs:
     steps:
       - name: Cancel lgtm
         run: |
-          echo "Event: ${{ github.event_name }},Action: ${{ github.event.action }}"
           gh pr -R ${{ github.repository }} edit ${{ github.event.pull_request.number }} --remove-label "lgtm"
